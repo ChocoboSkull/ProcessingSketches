@@ -5,6 +5,6 @@
 [Mm]odes/
 [Tt]emplates/
 [Tt]ools/
-[Oo]ut/
+**[Oo]ut/
 ProcessingSketches.pde
 theme.txt
