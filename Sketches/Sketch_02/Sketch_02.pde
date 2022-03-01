@@ -12,4 +12,6 @@ void draw()
     noFill();
 
     rect(400, 400, 600, 600);
+
+    save("frame.png");
 }
