@@ -45,7 +45,7 @@ class Hexagon
             stroke(strokeColour);
         }
 
-        for(int d = 0; d <= depthLevel; d++)
+        for(int d = 0; d < depthLevel; d++)
         {
             beginShape();
                 for (float a = PI/6; a < TWO_PI; a += angle) 
@@ -53,9 +53,23 @@ class Hexagon
                     if (hexRadiusDirection <= 1.5)
                     {
                         // Small to large
-                        float sx = centerX + cos(a) * (radius*(d*0.25));
-                        float sy = centerY + sin(a) * (radius*(d*0.25));
-                        vertex(sx, sy);
+                        if (d == 0)
+                        {
+                            // Renders smallest step, not bugged, just aesthetically displeasing
+                            
+                            /*
+                            float sx = centerX + cos(a) * (radius*0.05);
+                            float sy = centerY + sin(a) * (radius*0.05);
+                            vertex(sx, sy);
+                            */
+                        }
+                        else
+                        {
+                            float sx = centerX + cos(a) * (radius*(d*0.25));
+                            float sy = centerY + sin(a) * (radius*(d*0.25));
+                            vertex(sx, sy);
+                        }
+
                     }
                     else
                     {
@@ -68,7 +82,6 @@ class Hexagon
                 }
             endShape(CLOSE);
         }
-
     }
  
     float centerX()
