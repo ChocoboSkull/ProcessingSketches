@@ -21,7 +21,6 @@ class Hexagon
         if (depthCheck == true)
         {
             depthLevel = (int) random(1,6);
-            //depthLevel = 5;
         }
     }
  
